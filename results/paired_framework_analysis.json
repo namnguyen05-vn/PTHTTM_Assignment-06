@@ -1,0 +1,17 @@
+{
+  "retailrocket": {
+    "max_probability_difference": 0.23988628387451172,
+    "mean_probability_difference": 0.001638455898500979,
+    "prediction_agreement": 0.9982993772844185
+  },
+  "sp500": {
+    "max_return_difference": 1.5996629372239113e-05,
+    "mean_return_difference": 2.5923714019882027e-06,
+    "actual_return_std": 0.015291494317352772,
+    "pytorch_return_std": 0.002689426764845848,
+    "keras_return_std": 0.0026895918417721987,
+    "upward_share": 0.5309292999463198,
+    "downward_share": 0.46081867651857233,
+    "zero_share": 0.00825202353510794
+  }
+}

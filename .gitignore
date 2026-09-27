@@ -12,3 +12,6 @@ report/preview*
 *.zip
 
 PAUSE_TRAINING
+
+*.lock
+report/_expanded_body.pdf

@@ -1,0 +1,8 @@
+{
+  "dataset": "sp500",
+  "framework": "pytorch",
+  "samples": 256,
+  "max_abs_error": 0.0,
+  "device": "cuda",
+  "passed": true
+}

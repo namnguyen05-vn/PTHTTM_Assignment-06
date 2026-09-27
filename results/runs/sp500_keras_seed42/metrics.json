@@ -1,0 +1,20 @@
+{
+  "mae": 0.01001165630124143,
+  "rmse": 0.015532857678767425,
+  "directional_accuracy": 0.5016682981254013,
+  "mean_true_return": 0.0003965526012739019,
+  "mean_predicted_return": 0.00078498849215145,
+  "price_mae": 0.9810758247113469,
+  "price_rmse": 2.413375063249274,
+  "price_reconstruction_clipped": 0,
+  "dataset": "sp500",
+  "framework": "keras",
+  "seed": 42,
+  "best_epoch": 1,
+  "completed_epochs": 5,
+  "train_seconds": 304.93874739998137,
+  "samples": 95007,
+  "trainable_parameters": 1313,
+  "smoke": false,
+  "evaluation_split": "test"
+}

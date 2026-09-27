@@ -35,7 +35,7 @@ def explore():
     table=pd.crosstab(days,np.asarray(d["labels"]))
     table.columns=meta["labels"]
     table.plot(figsize=(10,3.5))
-    plt.ylabel("Số nhãn mục tiêu / ngày");save("retail_daily")
+    plt.xlabel("Ngày (UTC)");plt.ylabel("Số nhãn mục tiêu / ngày");save("retail_daily")
     ids=split_ids(d,"train");counts=np.zeros((3,3))
     np.add.at(counts,(d["previous_event"][ids],d["labels"][ids]),1)
     transition=counts/np.maximum(counts.sum(1,keepdims=True),1)
@@ -68,14 +68,19 @@ def explore():
 def results():
     for name in ["retailrocket","sp500"]:
         d=load_data(name)
-        fig,axes=plt.subplots(1,2,figsize=(10,3.5))
+        fig,axes=plt.subplots(1,3 if name=="retailrocket" else 2,figsize=(12 if name=="retailrocket" else 10,3.5))
         for framework in ["pytorch","keras"]:
             folder=ROOT/"results/runs"/(name+"_"+framework+"_seed42")
             history=pd.read_csv(folder/"history.csv")
             axes[0].plot(history.epoch,history.train_loss,label=framework)
             axes[1].plot(history.epoch,history.val_loss,label=framework)
+            if name=="retailrocket":
+                axes[2].plot(history.epoch,history.val_score,label=framework)
+                best=read_json(folder/"metrics.json")["best_epoch"]
+                axes[2].scatter([best],[history.loc[history.epoch==best,"val_score"].iloc[0]],marker="*",s=95)
+                axes[2].set_ylabel("Validation macro-F1")
         for ax in axes:ax.set_xlabel("Epoch");ax.legend()
-        axes[0].set_ylabel("Training loss")
+        axes[0].set_ylabel("Train CE có trọng số" if name=="retailrocket" else "Train MSE (return chuẩn hóa)")
         axes[1].set_ylabel("Validation CE" if name=="retailrocket" else "Validation RMSE (log return)")
         save(name+"_learning")
         for framework in ["pytorch","keras"]:
@@ -104,7 +109,7 @@ def results():
                 for ax in axes:ax.legend()
                 axes[0].set_ylabel("Giá đóng cửa AAPL");axes[1].set_ylabel("Log return")
                 save(name+"_"+framework+"_forecast")
-                grouped=frame.groupby("group").apply(lambda g:float(np.abs(g.prediction-g.actual).mean()))
+                grouped=frame.assign(abs_error=np.abs(frame.prediction-frame.actual)).groupby("group").abs_error.mean()
                 pd.DataFrame({"ticker":[d["metadata"]["tickers"][int(i)] for i in grouped.index],
                     "mae":grouped.values}).to_csv(ROOT/"results"/(framework+"_stock_per_ticker.csv"),index=False)
 

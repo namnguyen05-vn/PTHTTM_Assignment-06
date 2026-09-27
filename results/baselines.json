@@ -1,0 +1,124 @@
+[
+  {
+    "accuracy": 0.9155526600785163,
+    "macro_f1": 0.31863829837354923,
+    "log_loss": 0.3354130673739673,
+    "per_class": [
+      {
+        "label": 0,
+        "precision": 0.9155526600785163,
+        "recall": 1.0,
+        "f1": 0.9559148951206476,
+        "support": 108211
+      },
+      {
+        "label": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7683
+      },
+      {
+        "label": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2298
+      }
+    ],
+    "ap_1": 0.06500439962095574,
+    "ap_2": 0.019442940300527956,
+    "confusion_matrix": [
+      [
+        108211,
+        0,
+        0
+      ],
+      [
+        7683,
+        0,
+        0
+      ],
+      [
+        2298,
+        0,
+        0
+      ]
+    ],
+    "dataset": "retailrocket",
+    "model": "prior"
+  },
+  {
+    "accuracy": 0.9155526600785163,
+    "macro_f1": 0.31863829837354923,
+    "log_loss": 0.28896598734500695,
+    "per_class": [
+      {
+        "label": 0,
+        "precision": 0.9155526600785163,
+        "recall": 1.0,
+        "f1": 0.9559148951206476,
+        "support": 108211
+      },
+      {
+        "label": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7683
+      },
+      {
+        "label": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2298
+      }
+    ],
+    "ap_1": 0.1059273727370299,
+    "ap_2": 0.1788149633868595,
+    "confusion_matrix": [
+      [
+        108211,
+        0,
+        0
+      ],
+      [
+        7683,
+        0,
+        0
+      ],
+      [
+        2298,
+        0,
+        0
+      ]
+    ],
+    "dataset": "retailrocket",
+    "model": "markov"
+  },
+  {
+    "mae": 0.009756105480192567,
+    "rmse": 0.015296634978416514,
+    "directional_accuracy": 0.00825202353510794,
+    "mean_true_return": 0.0003965526012739019,
+    "mean_predicted_return": 0.0,
+    "price_mae": 0.9579365130990349,
+    "price_rmse": 2.3883903758727665,
+    "price_reconstruction_clipped": 0,
+    "dataset": "sp500",
+    "model": "zero_return"
+  },
+  {
+    "mae": 0.009735834752860729,
+    "rmse": 0.015291498502135658,
+    "directional_accuracy": 0.5309292999463198,
+    "mean_true_return": 0.0003965526012739019,
+    "mean_predicted_return": 0.0004083315434399992,
+    "price_mae": 0.9555959719016067,
+    "price_rmse": 2.3872029623677675,
+    "price_reconstruction_clipped": 0,
+    "dataset": "sp500",
+    "model": "train_mean_return"
+  }
+]

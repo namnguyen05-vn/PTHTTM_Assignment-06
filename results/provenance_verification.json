@@ -1,0 +1,30 @@
+[
+  {
+    "dataset": "retailrocket",
+    "framework": "pytorch",
+    "metadata_matches": true,
+    "history_and_selection_verified": true,
+    "csv_predictions_verified": true
+  },
+  {
+    "dataset": "retailrocket",
+    "framework": "keras",
+    "metadata_matches": true,
+    "history_and_selection_verified": true,
+    "csv_predictions_verified": true
+  },
+  {
+    "dataset": "sp500",
+    "framework": "pytorch",
+    "metadata_matches": true,
+    "history_and_selection_verified": true,
+    "csv_predictions_verified": true
+  },
+  {
+    "dataset": "sp500",
+    "framework": "keras",
+    "metadata_matches": true,
+    "history_and_selection_verified": true,
+    "csv_predictions_verified": true
+  }
+]

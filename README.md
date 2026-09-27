@@ -7,16 +7,28 @@ Email tác giả commit: **namnguyen260805@gmail.com**.
 
 ## Trạng thái
 
-**Sẵn sàng để người dùng huấn luyện đầy đủ.** Đã chuẩn bị hai dataset; chạy thử bốn cấu hình trên tập nhỏ; kiểm chứng BPTT, masking, checkpoint, optimizer và tiếp tục qua hai tiến trình. Notebook đã chạy ở chế độ minh họa, chưa bật huấn luyện đầy đủ.
+**Bốn lượt huấn luyện đầy đủ đã hoàn tất.** Metric được tính lại từ dự đoán và nhãn test; checkpoint tốt nhất của mỗi lượt được nạp trong tiến trình mới và khớp dự đoán trên batch kiểm tra. Notebook đã thực thi lại để lưu kết quả thực nghiệm.
 
-- [Bản thảo PDF trước huấn luyện — 43 trang](report/Assignment06_BanThao_TruocHuanLuyen.pdf): dùng khung và logo bìa ASG 04.
+- [Báo cáo PDF hoàn chỉnh - 56 trang](report/Assignment06_NguyenNgocHoangNam_B23DCCN585.pdf): bìa theo ASG 04, có lý thuyết, phân tích dữ liệu, kết quả, đối chứng, biểu đồ và kết luận.
 - [Mười notebook chia cell nhỏ](notebooks/).
-- [Hướng dẫn bắt đầu nhanh](HUONG_DAN_CHAY.md).
-- [Cấu hình bốn lượt chính](configs/main.json).
+- [Bảng kết quả tổng hợp](results/experiment_summary.csv).
+- [Kết quả, lịch sử và checkpoint của bốn lượt](results/runs/).
+- [Hướng dẫn xem bài và chạy lại](HUONG_DAN_CHAY.md).
 
-Bản thảo **chưa chứa kết quả test của bốn mô hình RNN chính**. Smoke không dùng để kết luận hiệu năng. Phạm vi chỉ có **Simple RNN**, không triển khai LSTM/GRU: 2 dataset × 2 framework = **4 lượt chính**, seed 42.
+Phạm vi chỉ có **Simple RNN**, không triển khai LSTM/GRU: 2 dataset × 2 framework = **4 lượt chính**, seed 42. Bản thảo trước huấn luyện còn được giữ để truy vết, không phải báo cáo nộp cuối.
 
-## 1. Chạy ngay trên máy hiện tại
+| Dataset | Framework | Chỉ số test chính | Epoch chọn / đã chạy |
+|---|---|---:|---:|
+| Retailrocket | PyTorch | Macro-F1 0,582107 | 8 / 12 |
+| Retailrocket | Keras | Macro-F1 0,581783 | 8 / 12 |
+| S&P 500 | PyTorch | RMSE return 0,0155328805 | 1 / 5 |
+| S&P 500 | Keras | RMSE return 0,0155328577 | 1 / 5 |
+
+Retailrocket: RNN cải thiện macro-F1 và AP lớp hiếm, nhưng accuracy thấp hơn đối chứng luôn-view và log loss cao hơn Markov. S&P 500: RNN chưa vượt zero-return hoặc trung bình train về sai số; RMSE của trung bình train là 0,0152914985. Không diễn giải đường giá một bước bám sát thực tế như bằng chứng về lợi nhuận hoặc dự báo vượt đối chứng.
+
+Tổng thời gian epoch ghi trong history khoảng **32,41 phút**, gồm validation. Chỉ có một seed và một tập chia; chưa có kiểm định ưu thế thống kê giữa framework.
+
+## 1. Môi trường và tái chạy trên máy hiện tại
 
 - Mã nguồn: E:\PTHTTM\ASG_06.
 - Dữ liệu: E:\PTHTTM\ASG_06_data.
@@ -24,11 +36,11 @@ Bản thảo **chưa chứa kết quả test của bốn mô hình RNN chính**.
 - Môi trường dựa trên Anaconda đã có PyTorch 2.5.1+cu121 và TensorFlow/Keras 2.10.1/2.10.0. **Không cần cài lại trên máy hiện tại.**
 - Các BAT đặt thư mục tạm, cache tải gói và dữ liệu Jupyter trên ổ E.
 
-Đóng kernel và ứng dụng nặng không dùng, rồi mở **RUN_TRAINING.bat**. Thứ tự: Retailrocket/PyTorch, Retailrocket/Keras, S&P 500/PyTorch, S&P 500/Keras.
+Các lượt chính đã hoàn tất, không cần huấn luyện lại để xem bài. Khi cần tiếp tục một lượt chưa hoàn tất, đóng kernel và ứng dụng nặng không dùng, rồi mở **RUN_TRAINING.bat**. Thứ tự: Retailrocket/PyTorch, Retailrocket/Keras, S&P 500/PyTorch, S&P 500/Keras.
 
 Mỗi lượt dùng toàn bộ train đã chuẩn bị, tối đa 20 epoch và có early stopping. Lượt hoàn tất được bỏ qua; hàng đợi có khóa để tránh chạy trùng.
 
-Khi bốn lượt hoàn tất, báo lại để kiểm tra đầu ra và hoàn thiện PDF. Các tệp nằm sẵn trên máy, không cần gửi lại dataset.
+Các tệp đầu ra và PDF cuối đã nằm sẵn trên máy. RUN_TRAINING.bat bỏ qua kết quả đã hoàn tất; không xóa kết quả hoặc đổi cấu hình trong cùng thư mục để chạy một thí nghiệm mới.
 
 ## 2. Tạm dừng, Sleep và tiếp tục
 
@@ -146,6 +158,8 @@ python tools/check_data.py
 python tools/verify_backend.py pytorch
 python tools/verify_backend.py keras
 python tools/verify_resume.py
+python tools/verify_results.py
+python tools/analyze_results.py
 ~~~
 
 Sau khi đủ bốn lượt chính, mở FINALIZE_REPORT.bat (tự đăng ký kernel trên ổ E), hoặc chạy trong môi trường có kernel assignment06:
@@ -174,3 +188,16 @@ Output Retailrocket là logits; output chứng khoán là return đã chia thang
 Hai framework dùng cùng dữ liệu, trọng số ban đầu, loss, class weights, cửa sổ và thứ tự batch; không khẳng định mọi cập nhật số học khớp bitwise. Chỉ có một seed: không báo cáo độ lệch chuẩn nhiều lượt hoặc ưu thế thống kê của framework.
 
 Dataset gốc, cache, token và sách giảng viên không nằm trong Git. Source báo cáo, notebook, audit và hồ sơ kiểm chứng được lưu để truy vết.
+
+## 8. Hồ sơ sau huấn luyện
+
+Metric được đối chiếu trên toàn bộ test; kiểm tra nạp checkpoint dùng 256 mẫu đầu mỗi lượt. CSV được so với NPZ, ID, nhãn và timestamp; lịch sử early stopping được dựng lại theo min_delta và patience.
+
+- results/metric_verification.json: bốn lượt tính lại metric.
+- results/checkpoint_*.json: nạp lại trọng số và đối chiếu dự đoán.
+- results/provenance_verification.json: cấu hình, hash metadata, CSV và lựa chọn epoch.
+- results/paired_framework_analysis.json: sai khác dự đoán giữa hai framework.
+- results/stock_monthly_metrics.csv: sai số từng tháng, không dùng để chọn lại mô hình.
+- results/final_verification.json: kiểm tra bộ bài và PDF cuối.
+
+results/preparation_verification.json lưu trạng thái lịch sử trước huấn luyện; trạng thái cuối được ghi trong final_verification.json.

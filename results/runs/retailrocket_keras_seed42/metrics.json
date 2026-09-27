@@ -1,0 +1,57 @@
+{
+  "accuracy": 0.901059293353188,
+  "macro_f1": 0.5817834964112906,
+  "log_loss": 0.3407112574364521,
+  "per_class": [
+    {
+      "label": 0,
+      "precision": 0.9478138222849083,
+      "recall": 0.9501437007328275,
+      "f1": 0.9489773314627483,
+      "support": 108211
+    },
+    {
+      "label": 1,
+      "precision": 0.3942943510296618,
+      "recall": 0.2716386828061955,
+      "f1": 0.3216707768187423,
+      "support": 7683
+    },
+    {
+      "label": 2,
+      "precision": 0.36069651741293535,
+      "recall": 0.6940818102697999,
+      "f1": 0.47470238095238093,
+      "support": 2298
+    }
+  ],
+  "ap_1": 0.27492708778166774,
+  "ap_2": 0.4594400784812085,
+  "confusion_matrix": [
+    [
+      102816,
+      2907,
+      2488
+    ],
+    [
+      5257,
+      2087,
+      339
+    ],
+    [
+      404,
+      299,
+      1595
+    ]
+  ],
+  "dataset": "retailrocket",
+  "framework": "keras",
+  "seed": 42,
+  "best_epoch": 8,
+  "completed_epochs": 12,
+  "train_seconds": 1007.7130747000192,
+  "samples": 118192,
+  "trainable_parameters": 1475,
+  "smoke": false,
+  "evaluation_split": "test"
+}

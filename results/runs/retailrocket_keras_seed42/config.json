@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "hidden_size": 32,
+  "batch_size": 256,
+  "max_epochs": 20,
+  "patience": 4,
+  "min_delta": 1e-05,
+  "learning_rate": 0.001,
+  "adam_epsilon": 1e-07,
+  "clip_norm": 1,
+  "dataset": "retailrocket",
+  "framework": "keras",
+  "smoke": false,
+  "class_weights": [
+    0.778438758214022,
+    3.0554776934025285,
+    5.659938637800053
+  ],
+  "metadata_sha256": "08e6797558192e232e85cf83c11f7dea1b86ea1593586222fbcc27a4b0845620",
+  "selection": "validation macro-F1"
+}

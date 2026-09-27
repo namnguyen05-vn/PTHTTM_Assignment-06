@@ -1,0 +1,20 @@
+{
+  "mae": 0.01001167476717645,
+  "rmse": 0.015532880453511007,
+  "directional_accuracy": 0.5017104002862947,
+  "mean_true_return": 0.0003965526012739019,
+  "mean_predicted_return": 0.0007853518937368407,
+  "price_mae": 0.9810745793467336,
+  "price_rmse": 2.41337032841921,
+  "price_reconstruction_clipped": 0,
+  "dataset": "sp500",
+  "framework": "pytorch",
+  "seed": 42,
+  "best_epoch": 1,
+  "completed_epochs": 5,
+  "train_seconds": 131.84016350001912,
+  "samples": 95007,
+  "trainable_parameters": 1313,
+  "smoke": false,
+  "evaluation_split": "test"
+}

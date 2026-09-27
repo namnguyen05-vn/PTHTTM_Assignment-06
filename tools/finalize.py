@@ -14,8 +14,8 @@ if __name__=="__main__":
     steps=[["tools/verify_results.py"]]
     steps += [["tools/verify_checkpoint.py",d,f]
         for d in ["retailrocket","sp500"] for f in ["pytorch","keras"]]
-    steps += [["tools/baselines.py"],["tools/figures.py","--results"],
-        ["tools/execute_notebooks.py"],["report/build_report.py"]]
+    steps += [["tools/baselines.py"],["tools/analyze_results.py"],["tools/figures.py","--results"],
+        ["tools/execute_notebooks.py"],["report/build_report.py"],["tools/verify_submission.py"]]
     status=dict(status="running",finished=[])
     for step in steps:
         status["stage"]=" ".join(step)

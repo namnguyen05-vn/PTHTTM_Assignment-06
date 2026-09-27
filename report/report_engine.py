@@ -32,8 +32,11 @@ def page(title,chapter=None):
     PAGES.append(dict(title=title,chapter=chapter,blocks=[]))
     return len(PAGES)+1
 def add(flow):PAGES[-1]['blocks'].append(flow)
-def p(text,small=False):add(Paragraph(text,ST['small' if small else 'body']))
-def sub(text):add(Paragraph(text,ST['sub']))
+def rich(text):
+    # Preserve intentional markup/entities while escaping ordinary ampersands.
+    return re.sub(r'&(?!#\d+;|#x[0-9a-fA-F]+;|[A-Za-z][A-Za-z0-9]+;)', '&amp;', text)
+def p(text,small=False):add(Paragraph(rich(text),ST['small' if small else 'body']))
+def sub(text):add(Paragraph(rich(text),ST['sub']))
 def gap(h=7):add(Spacer(1,h))
 def table(headers,rows,widths=None,caption=None,small=False):
     style=ST['cell'] if not small else ST['toc']
@@ -47,7 +50,7 @@ def table(headers,rows,widths=None,caption=None,small=False):
     add(t)
     if caption:
         TABLES.append((len(TABLES)+1,caption,len(PAGES)))
-        add(Paragraph(f'Bảng {len(TABLES)}. '+caption,ST['caption']))
+        add(Paragraph(rich(f'Bảng {len(TABLES)}. '+caption),ST['caption']))
     else:gap()
 def code(text,caption):
     import inspect
@@ -56,13 +59,13 @@ def code(text,caption):
     assert max(map(len,lines),default=0)<=93,('Code line too long',caption,max(map(len,lines)))
     add(Preformatted(text,ST['code']))
     CODES.append((len(CODES)+1,caption,len(PAGES)))
-    add(Paragraph(f'Mã {len(CODES)}. '+caption,ST['caption']))
+    add(Paragraph(rich(f'Mã {len(CODES)}. '+caption),ST['caption']))
 def fig(path,caption,width=W,maxheight=285):
     target=ROOT/'figures'/path
     im=Image(str(target));scale=min(width/im.imageWidth,maxheight/im.imageHeight)
     im.drawWidth=im.imageWidth*scale;im.drawHeight=im.imageHeight*scale
     FIGURES.append((len(FIGURES)+1,caption,len(PAGES)))
-    add(im);add(Paragraph(f'Hình {len(FIGURES)}. '+caption,ST['caption']))
+    add(im);add(Paragraph(rich(f'Hình {len(FIGURES)}. '+caption),ST['caption']))
 def math(lines):
     import matplotlib
     matplotlib.use('Agg')
@@ -99,7 +102,7 @@ def render(target,expected_pages=96):
         c.drawString(59,28,'Nguyễn Ngọc Hoàng Nam - B23DCCN585');c.drawRightString(A4[0]-53,28,str(index))
         c.bookmarkPage('page'+str(index))
         if item['chapter'] is not None:c.addOutlineEntry(item['title'],'page'+str(index),level=0,closed=False)
-        story=[Paragraph(item['title'],ST['title'])]+item['blocks']
+        story=[Paragraph(rich(item['title']),ST['title'])]+item['blocks']
         # Measure flowables on the same width before drawing to catch content overflow.
         heights=[]
         for flow in story:

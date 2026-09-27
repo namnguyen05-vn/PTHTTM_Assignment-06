@@ -1,0 +1,26 @@
+[
+  {
+    "dataset": "retailrocket",
+    "framework": "pytorch",
+    "samples": 118192,
+    "verified": true
+  },
+  {
+    "dataset": "retailrocket",
+    "framework": "keras",
+    "samples": 118192,
+    "verified": true
+  },
+  {
+    "dataset": "sp500",
+    "framework": "pytorch",
+    "samples": 95007,
+    "verified": true
+  },
+  {
+    "dataset": "sp500",
+    "framework": "keras",
+    "samples": 95007,
+    "verified": true
+  }
+]

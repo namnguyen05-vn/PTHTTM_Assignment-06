@@ -24,6 +24,51 @@
       5,
       "Số cửa sổ hợp lệ theo từng mã cổ phiếu.",
       26
+    ],
+    [
+      6,
+      "Loss train, log loss validation và macro-F1 validation; dấu sao chỉ epoch được chọn.",
+      40
+    ],
+    [
+      7,
+      "Ma trận pytorch: màu chuẩn hóa theo nhãn thật, số trong ô là số mẫu.",
+      42
+    ],
+    [
+      8,
+      "Ma trận keras: màu chuẩn hóa theo nhãn thật, số trong ô là số mẫu.",
+      42
+    ],
+    [
+      9,
+      "Đường precision-recall trên test; đường ngang là tỷ lệ xuất hiện lớp.",
+      43
+    ],
+    [
+      10,
+      "Loss train trên return đã chuẩn hóa và RMSE validation trên return gốc.",
+      45
+    ],
+    [
+      11,
+      "AAPL trên test: giá đóng cửa và log return của phiên quan sát kế tiếp.",
+      46
+    ],
+    [
+      12,
+      "AAPL trên test: giá đóng cửa và log return của phiên quan sát kế tiếp.",
+      47
+    ],
+    [
+      13,
+      "Trái: 6.000 mẫu chọn với seed 42, khung return ±0,08. Phải: histogram sai số trong khung ±0,06.",
+      48
+    ],
+    [
+      14,
+      "RMSE theo tháng test. Tháng đầu và cuối chỉ bao gồm phần thời gian có trong test.",
+      48
     ]
   ],
   "tables": [
@@ -159,8 +204,58 @@
     ],
     [
       27,
+      "Kết quả Retailrocket. Accuracy và F1 càng cao càng tốt; log loss càng thấp càng tốt.",
+      39
+    ],
+    [
+      28,
+      "Cả hai lượt chọn epoch 8 và dừng sau epoch 12.",
+      40
+    ],
+    [
+      29,
+      "Đánh giá riêng ba loại hành vi trên cùng test.",
+      41
+    ],
+    [
+      30,
+      "Average precision (AP) cho bài toán mỗi lớp so với phần còn lại.",
+      43
+    ],
+    [
+      31,
+      "Sai số trên 95.007 mẫu test; return dùng thang logarit gốc.",
+      44
+    ],
+    [
+      32,
+      "Hai lượt đều chọn epoch 1 và dừng sau epoch 5.",
+      45
+    ],
+    [
+      33,
+      "Thời gian epoch hoàn tất gồm huấn luyện và tính validation.",
+      49
+    ],
+    [
+      34,
+      "So sánh dự đoán sau huấn luyện của PyTorch và Keras.",
+      49
+    ],
+    [
+      35,
+      "Nạp checkpoint tốt nhất trong tiến trình mới và đối chiếu dự đoán đã lưu.",
+      50
+    ],
+    [
+      36,
+      "Các bằng chứng đi cùng notebook và báo cáo.",
+      50
+    ],
+    [
+      37,
       "Thuật ngữ theo ngữ cảnh báo cáo.",
-      42
+      55
     ]
   ],
   "code_listings": [

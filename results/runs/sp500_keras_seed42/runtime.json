@@ -1,0 +1,5 @@
+{
+  "framework": "2.10.1",
+  "device": "cuda",
+  "trainable_parameters": 1313
+}

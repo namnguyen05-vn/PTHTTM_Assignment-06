@@ -78,7 +78,7 @@ def build():
             cells+=[M("## 4. Bộ huấn luyện đầy đủ\nVí dụ trên giải thích đồ thị. Bộ huấn luyện dùng cùng họ kiến trúc, khởi tạo chung giữa framework, trọng số lớp cho Retailrocket, clipping và checkpoint. Mã thuật toán dùng cho lượt chính nằm trong src/backends.py và src/training.py."),
                 C("from src.training import configuration\nconfig,_=configuration('"+name+"','"+framework+"')\ndisplay(config)"),
                 M("## 5. Chủ động chạy cấu hình này\nChỉ chuyển RUN_FULL=True khi muốn huấn luyện đầy đủ. Nên dùng RUN_TRAINING.bat để giảm bộ nhớ của kernel minh họa đang mở."),
-                C("RUN_FULL=False\nif RUN_FULL:\n    import subprocess\n    environment=os.environ.copy()\n    environment.pop('CUDA_VISIBLE_DEVICES',None)\n    subprocess.run([sys.executable,'-m','src.training','--dataset','"+name+"','--framework','"+framework+"'],cwd=ROOT,env=environment,check=True)\nelse:\n    print('Chưa khởi động huấn luyện đầy đủ.')"),
+                C("RUN_FULL=False\nif RUN_FULL:\n    import subprocess\n    environment=os.environ.copy()\n    environment.pop('CUDA_VISIBLE_DEVICES',None)\n    subprocess.run([sys.executable,'-m','src.training','--dataset','"+name+"','--framework','"+framework+"'],cwd=ROOT,env=environment,check=True)\nelse:\n    print('Cell này không khởi động huấn luyện; kết quả đã lưu được đọc ở phần sau.')"),
                 M("## 6. Dự đoán và kết quả được lưu"),
                 C("folder=ROOT/'results/runs/"+name+"_"+framework+"_seed42'\nif (folder/'metrics.json').exists():\n    display(read_json(folder/'metrics.json'))\n    display(pd.read_csv(folder/'predictions.csv').head(12))\nelse:\n    print('Kết quả chính sẽ có sau khi bạn huấn luyện xong.')")]
             write(f"{idx:02d}_{framework}_{name}",framework.upper()+" RNN trên "+name,cells);idx+=1
@@ -93,11 +93,13 @@ def build():
         M("Chỉ kết quả trong results/runs được dùng cho báo cáo chính. Smoke được lưu riêng. Các đối chứng được fit trên train."),
         C("records=[]\nfor folder in sorted((ROOT/'results/runs').glob('*')):\n    if (folder/'metrics.json').exists(): records.append(read_json(folder/'metrics.json'))\nif records: display(pd.DataFrame(records))\nelse: print('Chưa có kết quả huấn luyện đầy đủ.')"),
         C("path=ROOT/'results/baselines.json'\nif path.exists(): display(pd.DataFrame(read_json(path)))"),
-        C("for name in ['retailrocket_learning','sp500_learning','retailrocket_pytorch_confusion','retailrocket_keras_confusion','sp500_pytorch_forecast','sp500_keras_forecast']:\n    path=ROOT/'figures'/(name+'.png')\n    if path.exists(): display(Image(filename=str(path)))"),
+        C("for name in ['retailrocket_learning','sp500_learning','retailrocket_pytorch_confusion','retailrocket_keras_confusion','sp500_pytorch_forecast','sp500_keras_forecast','retail_pr','stock_diagnostics','stock_monthly']:\n    path=ROOT/'figures'/(name+'.png')\n    if path.exists(): display(Image(filename=str(path)))"),
+        C("path=ROOT/'results/paired_framework_analysis.json'\nif path.exists(): display(read_json(path))"),
+        M("Kết quả thực nghiệm: macro-F1 Retailrocket xấp xỉ 0,582, cao hơn đối chứng argmax luôn-view; accuracy và log loss không vượt mọi đối chứng. RNN cổ phiếu có RMSE khoảng 0,015533, cao hơn đối chứng trung bình train 0,015291. Cả hai framework chọn epoch 8 cho Retailrocket và epoch 1 cho S&P 500."),
         M("Retailrocket: macro-F1 và từng lớp bổ sung accuracy trong tình huống mất cân bằng. Chứng khoán: so sánh sai số log return với dự đoán zero-return; giá dự báo sát giá thực không tự chứng minh có giá trị vượt đối chứng.")])
     write("09_Verification","Hồ sơ kiểm chứng và tái lập",[
         M("Kiểm chứng dữ liệu, NumPy, masking, optimizer và khởi động lại tiến trình bổ sung cho đánh giá dự đoán."),
-        C("for name in ['data_verification','verification_pytorch','verification_keras','resume_verification']:\n    path=ROOT/'results'/(name+'.json')\n    if path.exists(): display(read_json(path))"),
+        C("for name in ['data_verification','verification_pytorch','verification_keras','resume_verification','provenance_verification','checkpoint_retailrocket_pytorch','checkpoint_retailrocket_keras','checkpoint_sp500_pytorch','checkpoint_sp500_keras']:\n    path=ROOT/'results'/(name+'.json')\n    if path.exists(): display(read_json(path))"),
         M("## Kiểm chứng kết quả sau huấn luyện"),
         C("path=ROOT/'results/metric_verification.json'\nif path.exists(): display(read_json(path))\nelse: print('Sẽ kiểm chứng metric sau khi đủ bốn lượt chính.')")])
     print("Built",len(list((ROOT/'notebooks').glob('*.ipynb'))),"notebooks")

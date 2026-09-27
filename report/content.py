@@ -10,6 +10,8 @@ def front(draft):
         p("<b>Trạng thái tài liệu:</b> bản thảo trước thực nghiệm chính. Các số liệu dữ liệu và kiểm chứng chương trình đã được đo; kết quả chạy thử nhỏ không được trình bày như chất lượng dự đoán trên test. Phần kết quả và kết luận thực nghiệm chỉ được xuất khi có đủ bốn lượt huấn luyện chính.",small=True)
     else:
         p("Bốn lượt RNN được kiểm tra từ tệp dự đoán, đối chiếu với các phương pháp cơ sở và trực quan hóa theo nhiệm vụ. Việc so sánh hai framework dựa trên cùng dữ liệu, độ dài cửa sổ, số chiều ẩn và khởi tạo; không giả định số học giữa hai backend hoàn toàn giống nhau.")
+        p("Trên Retailrocket, macro-F1 đạt 0,5821 với PyTorch và 0,5818 với Keras, cao hơn 0,3186 của đối chứng luôn chọn view; tuy nhiên accuracy và log loss không vượt mọi đối chứng. Trên S&P 500, RMSE return của hai RNN khoảng 0,015533, cao hơn 0,015291 của dự đoán trung bình train. Kết quả cho thấy hiệu quả của mô hình phụ thuộc nhiệm vụ và tiêu chí, không được bảo đảm chỉ bởi kiến trúc hồi tiếp.")
+
     p("<b>Từ khóa:</b> RNN; trạng thái ẩn; BPTT; hành vi khách hàng; chuỗi thời gian; dự báo; PyTorch; Keras.",small=True)
     p("Nguồn và tài nguyên: "+link(GH)+". Trợ lý AI hỗ trợ triển khai, kiểm tra và biên soạn; các thống kê dữ liệu và kết quả kiểm tra được sinh từ tệp thực tế.",small=True)
     page("MỤC LỤC (1/2)",chapter=0)
@@ -46,7 +48,7 @@ def datasets():
     page("3.3. Retailrocket: làm sạch và dựng phiên")
     table(["Bước kiểm tra","Số lượng"],[["Dòng gốc",retail["raw_rows"]],["Trùng hoàn toàn bị loại",retail["exact_duplicates_removed"]],["Dòng trùng thời điểm gây thứ tự mơ hồ bị loại",retail["ambiguous_timestamp_rows_removed"]],["Sự kiện còn lại",retail["retained_events"]],["Phiên sau xử lý",retail["sessions"]],["Phiên một sự kiện",retail["singleton_sessions"]]],[355,128],caption="Audit làm sạch Retailrocket.")
     p("Sau khi loại bản ghi trùng hoàn toàn, các dòng cùng visitorid và timestamp nhưng còn nhiều quan sát được loại khỏi chuỗi. Đây là quy tắc bảo thủ để không tự đặt thứ tự giữa các hành động đồng thời. Nó làm mất một phần sự kiện giao dịch nhiều sản phẩm; phân bố sau xử lý không được đồng nhất với toàn bộ lưu lượng ban đầu.")
-    p("Một phiên mới bắt đầu khi đổi visitorid hoặc khoảng cách từ sự kiện trước vượt ba mươi phút. Ngưỡng này là giả định mô hình hóa của nghiên cứu, không phải nhãn phiên do website cung cấp. Phiên chỉ có một sự kiện không tạo được cặp lịch sử–hành vi tiếp theo.")
+    p("Một phiên mới bắt đầu khi đổi visitorid hoặc khoảng cách từ sự kiện trước vượt ba mươi phút. Ngưỡng này là giả định mô hình hóa của nghiên cứu, không phải nhãn phiên do website cung cấp. Phiên chỉ có một sự kiện không tạo được cặp lịch sử-hành vi tiếp theo.")
     p("Các phiên cắt qua ranh giới tập chia bị loại khỏi nhóm mẫu huấn luyện/đánh giá để một phiên không xuất hiện ở nhiều phần. Cùng một khách quay lại ở thời gian khác vẫn có thể xuất hiện ở nhiều tập; bài đánh giá dự báo tương lai của dòng truy cập, không chỉ riêng khách hoàn toàn mới.")
 
     page("3.4. Retailrocket: đặc trưng và mất cân bằng")
@@ -190,7 +192,7 @@ def methods():
     table(["Framework","Khởi động lại tiến trình","Sai khác đầu ra lớn nhất"],[[r["framework"],"Đã kiểm tra",r["max_output_error"]] for r in resume],[130,190,163],caption="So sánh smoke hai epoch liền với dừng sau epoch thứ nhất.")
     p("Kiểm tra đạt trong môi trường hiện tại không bảo đảm kết quả giống từng bit khi đổi thiết bị, thư viện hoặc cấu hình. Các tệp config và phiên bản đi cùng checkpoint là điều kiện cần để diễn giải phép chạy tiếp.",small=True)
 
-    page("5.5. Hồ sơ kiểm chứng và giới hạn trước huấn luyện")
+    page("5.5. Hồ sơ kiểm chứng chương trình")
     notebooks=read("results/notebook_verification.json")
     table(["Kiểm tra","Kết quả"],[["Tập chia theo thời gian","Hai dataset đạt"],["BPTT NumPy","Gradient số và giải tích khớp"],["Forward hai framework","Khớp ví dụ NumPy"],["Masking","Đổi padding không đổi dự đoán"],["Tiếp tục optimizer","Đã đối chiếu bước tiếp theo"],["Chạy lại qua tiến trình","Hai framework đạt"],["Notebook thực thi",len(notebooks)],["Cell code",sum(r["code_cells"] for r in notebooks)]],[295,188],caption="Các kiểm tra chương trình đã thực hiện.")
     p("Smoke dùng tối đa 512 mẫu train, 128 mẫu validation và hai epoch. Nó kiểm tra đường đi của chương trình trên dữ liệu thật nhưng không đo chất lượng mô hình chính. Test chính thức không được dùng làm tập đánh giá của smoke.")
@@ -198,7 +200,15 @@ def methods():
     p("Nguồn code, notebook và hướng dẫn môi trường được công bố tại "+link(GH)+". Dữ liệu raw, cache và tệp tạm đặt trên ổ E, tách khỏi bộ bài nộp và lịch sử Git.")
 
 def finish(draft):
-    page("GIỚI HẠN VÀ PHẠM VI DIỄN GIẢI",chapter=7)
+    if not draft:
+        page("CHƯƠNG 7. KẾT LUẬN",chapter=7)
+        p("Nghiên cứu đã xây dựng và kiểm chứng RNN cơ bản dưới góc nhìn hàm: trạng thái ẩn là kết quả lặp của phép biến đổi affine và tanh; các bước dùng chung trọng số; gradient được truyền qua đồ thị trải theo thời gian. Ví dụ NumPy, kiểm tra sai phân hữu hạn và hai triển khai thư viện liên kết công thức với mã thực thi.")
+        p("Hai tập dữ liệu lớn được chuyển thành bài toán chuỗi có mốc quan sát rõ ràng. Retailrocket dùng lịch sử hành vi trong phiên để dự đoán loại sự kiện kế tiếp; S&P 500 dùng cửa sổ 30 phiên để dự đoán log return. Chia tập theo thời gian, chuẩn hóa chỉ dựa trên train và tách dữ liệu giữa các thực thể tạo cơ sở cho đánh giá có thể truy vết.")
+        p("Bốn lượt huấn luyện hoàn tất và được kiểm tra từ dự đoán, lịch sử và checkpoint. Hai framework cho chất lượng rất gần nhau, đồng thời khác nhau về thời gian chạy trong môi trường được khảo sát. Kết quả một seed chưa đủ để khẳng định ưu thế chung của PyTorch hoặc Keras.")
+        p("Trên hành vi khách hàng, RNN có trọng số lớp cải thiện macro-F1 và khả năng xếp hạng hai hành vi hiếm, đổi lại accuracy thấp hơn đối chứng luôn-view và log loss kém hơn Markov. Chưa có thực nghiệm loại bỏ thành phần để tách tác dụng của lịch sử, đặc trưng và trọng số lớp. Vì vậy, kết luận giới hạn ở cấu hình và thước đo đã đo.")
+        p("Trên cổ phiếu, mô hình chưa vượt dự đoán return bằng không hoặc trung bình train về sai số. Đường giá một bước gần thực tế chủ yếu phải được đọc cùng giá phiên trước đã biết và sai số return. Kết quả âm này là một phát hiện của thực nghiệm, không phải lý do thay thế test hoặc chỉ chọn hình minh họa thuận lợi.")
+        p("Hướng mở rộng trong phạm vi Simple RNN gồm đánh giá cuốn chiếu nhiều giai đoạn, lặp nhiều seed, khảo sát độ dài cửa sổ và số chiều ẩn bằng validation, cùng đối chứng được gán trọng số lớp tương ứng. Những nội dung này chưa được thực hiện trong bộ kết quả hiện tại và không được trình bày như thành tích đã đạt.")
+    page("GIỚI HẠN VÀ PHẠM VI DIỄN GIẢI",chapter=7 if draft else None)
     p("Một tập chia theo thời gian và một seed cho mỗi cấu hình chưa đủ để kết luận về mọi giai đoạn thị trường hoặc mọi website. Khác biệt phân phối giữa giai đoạn train và test có thể ảnh hưởng chất lượng dù chương trình đúng về số học.")
     p("Retailrocket chỉ xét các phiên còn sự kiện kế tiếp; phiên một sự kiện không có nhãn trong bài toán này. Việc loại timestamp mơ hồ ảnh hưởng một phần giao dịch nhiều sản phẩm. Các chỉ số không được diễn giải thành tỷ lệ chuyển đổi của toàn bộ khách truy cập.")
     p("Bộ S&P 500 là dữ liệu lịch sử với giới hạn về thành phần chỉ số và điều chỉnh giá. Dự báo return hoặc hướng thay đổi chưa tạo thành đánh giá chiến lược giao dịch vì chưa mô hình hóa chi phí, thanh khoản và khả năng thực thi.")
@@ -207,7 +217,7 @@ def finish(draft):
         p("Ở giai đoạn bản thảo, có thể kết luận chương trình và quy trình kiểm tra đã được chuẩn bị trên dữ liệu thật. Chưa có kết luận định lượng về ưu thế của RNN so với các đối chứng trên test chính thức.")
 
     refs=[
-        ("[1]","Elman, J. L. Finding Structure in Time. Cognitive Science, 14, 179–211, 1990.","https://doi.org/10.1207/S15516709COG1402_1"),
+        ("[1]","Elman, J. L. Finding Structure in Time. Cognitive Science, 14, 179-211, 1990.","https://doi.org/10.1207/S15516709COG1402_1"),
         ("[2]","Pascanu, R.; Mikolov, T.; Bengio, Y. On the difficulty of training recurrent neural networks. ICML, 2013.","https://proceedings.mlr.press/v28/pascanu13.html"),
         ("[3]","PyTorch. RNN: định nghĩa toán học, hình dạng đầu vào và đầu ra.","https://docs.pytorch.org/docs/stable/generated/torch.nn.RNN.html"),
         ("[4]","Keras. SimpleRNN: trạng thái, masking và phép hồi tiếp.","https://keras.io/2/api/layers/recurrent_layers/simple_rnn/"),

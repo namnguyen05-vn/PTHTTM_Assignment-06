@@ -1,0 +1,90 @@
+{
+  "status": "complete_and_visually_reviewed",
+  "full_training_runs": [
+    {
+      "dataset": "retailrocket",
+      "framework": "pytorch",
+      "samples": 118192,
+      "best_epoch": 8,
+      "completed_epochs": 12
+    },
+    {
+      "dataset": "retailrocket",
+      "framework": "keras",
+      "samples": 118192,
+      "best_epoch": 8,
+      "completed_epochs": 12
+    },
+    {
+      "dataset": "sp500",
+      "framework": "pytorch",
+      "samples": 95007,
+      "best_epoch": 1,
+      "completed_epochs": 5
+    },
+    {
+      "dataset": "sp500",
+      "framework": "keras",
+      "samples": 95007,
+      "best_epoch": 1,
+      "completed_epochs": 5
+    }
+  ],
+  "notebooks": [
+    {
+      "file": "00_RNN_Functions.ipynb",
+      "code_cells": 8,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "01_Data_retailrocket.ipynb",
+      "code_cells": 7,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "02_Data_sp500.ipynb",
+      "code_cells": 6,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "03_pytorch_retailrocket.ipynb",
+      "code_cells": 10,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "04_keras_retailrocket.ipynb",
+      "code_cells": 10,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "05_pytorch_sp500.ipynb",
+      "code_cells": 10,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "06_keras_sp500.ipynb",
+      "code_cells": 10,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "07_Training_and_Resume.ipynb",
+      "code_cells": 4,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "08_Comparison_and_Visualization.ipynb",
+      "code_cells": 5,
+      "max_cell_lines": 13
+    },
+    {
+      "file": "09_Verification.ipynb",
+      "code_cells": 3,
+      "max_cell_lines": 13
+    }
+  ],
+  "pdf_pages": 56,
+  "pdf_sha256": "93d252cf1278bf1514c9ef355954067a29bbd037b843765aa529c3f8342c0c3e",
+  "visual_review_completed": true,
+  "links_verified": true,
+  "run_artifact_files": 40
+}

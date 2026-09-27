@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "hidden_size": 32,
+  "batch_size": 256,
+  "max_epochs": 20,
+  "patience": 4,
+  "min_delta": 1e-05,
+  "learning_rate": 0.001,
+  "adam_epsilon": 1e-07,
+  "clip_norm": 1,
+  "dataset": "sp500",
+  "framework": "keras",
+  "smoke": false,
+  "class_weights": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "metadata_sha256": "b2d0351f121f2acbb33875db0abe6550dbd5e68c818e63817ddafe7425e023dc",
+  "selection": "validation RMSE"
+}

@@ -2,17 +2,17 @@
   {
     "pdf_page": 2,
     "title": "TÓM TẮT VÀ PHẠM VI",
-    "estimated_content_height": 282.3
+    "estimated_content_height": 386.8
   },
   {
     "pdf_page": 3,
     "title": "MỤC LỤC (1/2)",
-    "estimated_content_height": 306.0
+    "estimated_content_height": 387.0
   },
   {
     "pdf_page": 4,
     "title": "MỤC LỤC (2/2)",
-    "estimated_content_height": 292.5
+    "estimated_content_height": 387.0
   },
   {
     "pdf_page": 5,
@@ -186,26 +186,91 @@
   },
   {
     "pdf_page": 39,
-    "title": "5.5. Hồ sơ kiểm chứng và giới hạn trước huấn luyện",
+    "title": "5.5. Hồ sơ kiểm chứng chương trình",
     "estimated_content_height": 435.0
   },
   {
     "pdf_page": 40,
-    "title": "GIỚI HẠN VÀ PHẠM VI DIỄN GIẢI",
-    "estimated_content_height": 303.3
+    "title": "CHƯƠNG 6. KẾT QUẢ VÀ THẢO LUẬN",
+    "estimated_content_height": 456.0
   },
   {
     "pdf_page": 41,
+    "title": "6.2. Đường học và lựa chọn mô hình hành vi",
+    "estimated_content_height": 474.1
+  },
+  {
+    "pdf_page": 42,
+    "title": "6.3. Precision, recall và F1 của từng hành vi",
+    "estimated_content_height": 418.9
+  },
+  {
+    "pdf_page": 43,
+    "title": "6.4. Ma trận nhầm lẫn và dạng lỗi",
+    "estimated_content_height": 574.7
+  },
+  {
+    "pdf_page": 44,
+    "title": "6.5. Khả năng xếp hạng các lớp hiếm",
+    "estimated_content_height": 572.0
+  },
+  {
+    "pdf_page": 45,
+    "title": "6.6. Kết quả dự báo log return S&P 500",
+    "estimated_content_height": 393.8
+  },
+  {
+    "pdf_page": 46,
+    "title": "6.7. Diễn biến huấn luyện dự báo cổ phiếu",
+    "estimated_content_height": 518.9
+  },
+  {
+    "pdf_page": 47,
+    "title": "6.8. Giá và return dự báo: pytorch",
+    "estimated_content_height": 551.8
+  },
+  {
+    "pdf_page": 48,
+    "title": "6.9. Giá và return dự báo: keras",
+    "estimated_content_height": 551.8
+  },
+  {
+    "pdf_page": 49,
+    "title": "6.10. Sai số theo phân phối và thời gian",
+    "estimated_content_height": 565.2
+  },
+  {
+    "pdf_page": 50,
+    "title": "6.11. Hai framework và chi phí thực nghiệm",
+    "estimated_content_height": 495.4
+  },
+  {
+    "pdf_page": 51,
+    "title": "6.12. Kiểm chứng đầu ra và khả năng truy vết",
+    "estimated_content_height": 495.4
+  },
+  {
+    "pdf_page": 52,
+    "title": "CHƯƠNG 7. KẾT LUẬN",
+    "estimated_content_height": 483.3
+  },
+  {
+    "pdf_page": 53,
+    "title": "GIỚI HẠN VÀ PHẠM VI DIỄN GIẢI",
+    "estimated_content_height": 260.1
+  },
+  {
+    "pdf_page": 54,
     "title": "TÀI LIỆU THAM KHẢO (1/2)",
     "estimated_content_height": 245.9
   },
   {
-    "pdf_page": 42,
+    "pdf_page": 55,
     "title": "TÀI LIỆU THAM KHẢO (2/2)",
     "estimated_content_height": 272.0
   },
   {
-    "pdf_page": 43,
+    "pdf_page": 56,
     "title": "PHỤ LỤC. THUẬT NGỮ",
     "estimated_content_height": 422.9
   }

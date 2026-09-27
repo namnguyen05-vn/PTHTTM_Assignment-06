@@ -1,31 +1,33 @@
-# Bắt đầu huấn luyện ASG 06
+# Xem kết quả và tái chạy ASG 06
 
-Dữ liệu và môi trường đã chuẩn bị. Không cần cài lại hoặc tải lại trên máy hiện tại.
+**Bốn lượt huấn luyện đã hoàn tất. Không cần chạy lại để xem kết quả.**
 
-1. Vào E:\PTHTTM\ASG_06.
-2. Đóng kernel notebook và ứng dụng nặng không dùng.
-3. Mở **RUN_TRAINING.bat**.
-4. Giữ máy thức, cắm nguồn trong khi huấn luyện.
-5. Chương trình chạy 4 cấu hình, tự lưu và bỏ qua lượt đã hoàn tất.
+## Mở bộ bài
 
-## Khi cần Sleep
+1. Báo cáo cuối: report/Assignment06_NguyenNgocHoangNam_B23DCCN585.pdf.
+2. Mở START_JUPYTER.bat và chọn kernel Python (Assignment 06).
+3. Notebook 08 chứa bảng so sánh và biểu đồ; notebook 09 chứa hồ sơ kiểm chứng.
+4. Kết quả gốc nằm trong results/runs; bảng tổng hợp ở results/experiment_summary.csv.
+5. Dữ liệu được giữ ở E:\PTHTTM\ASG_06_data; mã nguồn ở E:\PTHTTM\ASG_06.
 
-1. Mở **PAUSE_TRAINING.bat**.
-2. Đợi cửa sổ huấn luyện báo epoch đã lưu và quá trình đã dừng.
-3. Sau đó Sleep hoặc tắt máy.
-4. Khi quay lại, mở **RUN_TRAINING.bat** để tiếp tục.
+RUN_FULL=False trong notebook để đọc kết quả và chạy ví dụ nhỏ. Trọng số và kết quả cuối đã có sẵn.
 
-Ctrl+C giữa epoch sẽ làm phần epoch chưa lưu chạy lại; các epoch đã lưu vẫn được giữ.
+## Xuất lại báo cáo
 
-## Xem bài
+FINALIZE_REPORT.bat tính lại metric, kiểm tra checkpoint, tạo đối chứng và biểu đồ, thực thi notebook rồi xuất PDF. Công cụ không huấn luyện RNN đầy đủ. PDF sau khi thay đổi nội dung vẫn cần kiểm tra bố cục trực tiếp.
 
-- Bản thảo: report/Assignment06_BanThao_TruocHuanLuyen.pdf.
-- Mở notebook: **START_JUPYTER.bat**.
-- Cell bật huấn luyện đầy đủ mặc định **RUN_FULL=False**.
-- Chưa chạy finalize trong lúc đang huấn luyện.
+## Tiếp tục một lượt chưa hoàn tất
 
-## Sau khi hoàn tất
+1. Đóng kernel và ứng dụng nặng không dùng.
+2. Mở RUN_TRAINING.bat; chương trình bỏ qua những lượt đã hoàn tất.
+3. Nếu cần Sleep, mở PAUSE_TRAINING.bat.
+4. Đợi cửa sổ báo epoch đã lưu và quá trình đã dừng, rồi mới Sleep.
+5. Khi quay lại, mở RUN_TRAINING.bat để tiếp tục.
 
-Báo lại “đã hoàn tất huấn luyện ASG 06”. Kết quả nằm sẵn trong E:\PTHTTM\ASG_06\results\runs, không cần gửi lại dataset nếu vẫn làm trên máy này.
+Ctrl+C giữa epoch khiến phần epoch chưa lưu phải chạy lại. Giữ nguyên checkpoint, dữ liệu và cấu hình của lượt đang chạy.
 
-Nếu gặp lỗi, giữ nguyên kết quả và gửi nội dung lỗi. Không xóa checkpoint hoặc chuẩn bị dữ liệu lại khi một lượt đang chạy.
+## Thực nghiệm mới
+
+Không xóa kết quả của bộ bài đã hoàn tất để thử cấu hình mới. Dùng thư mục kết quả riêng và đánh giá cấu hình bằng validation; không chọn tham số theo test đã xem.
+
+README.md có hướng dẫn cài môi trường trên ổ E, tải lại dữ liệu và cấu trúc đầu ra.
