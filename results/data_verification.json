@@ -1,0 +1,21 @@
+{
+  "datasets": [
+    {
+      "dataset": "retailrocket",
+      "samples": 988951,
+      "chronology_passed": true,
+      "finite_arrays": true,
+      "padding_samples_checked": 101,
+      "passed": true
+    },
+    {
+      "dataset": "sp500",
+      "samples": 603269,
+      "chronology_passed": true,
+      "finite_arrays": true,
+      "padding_samples_checked": 101,
+      "passed": true
+    }
+  ],
+  "numpy_bptt_gradient_passed": true
+}

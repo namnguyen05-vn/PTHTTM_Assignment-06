@@ -1,0 +1,10 @@
+{
+  "framework": "keras",
+  "device": "cpu",
+  "version": "2.10.1",
+  "initial_numpy_max_error": 2.8560716597292313e-07,
+  "padded_values_ignored": true,
+  "optimizer_resume_max_error": 0.0,
+  "trainable_parameters": 1475,
+  "passed": true
+}

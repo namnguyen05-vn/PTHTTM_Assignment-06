@@ -1,0 +1,5 @@
+*.pdf binary
+*.png binary
+*.npz binary
+*.bat text eol=crlf
+*.md whitespace=-blank-at-eol

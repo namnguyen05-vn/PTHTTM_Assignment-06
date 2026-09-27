@@ -1,0 +1,212 @@
+[
+  {
+    "pdf_page": 2,
+    "title": "TÓM TẮT VÀ PHẠM VI",
+    "estimated_content_height": 282.3
+  },
+  {
+    "pdf_page": 3,
+    "title": "MỤC LỤC (1/2)",
+    "estimated_content_height": 306.0
+  },
+  {
+    "pdf_page": 4,
+    "title": "MỤC LỤC (2/2)",
+    "estimated_content_height": 292.5
+  },
+  {
+    "pdf_page": 5,
+    "title": "CHƯƠNG 1. ĐẶT VẤN ĐỀ VÀ MỤC TIÊU",
+    "estimated_content_height": 341.6
+  },
+  {
+    "pdf_page": 6,
+    "title": "1.2. Đơn vị dự đoán và giới hạn quan sát",
+    "estimated_content_height": 371.7
+  },
+  {
+    "pdf_page": 7,
+    "title": "CHƯƠNG 2. DỮ LIỆU CHUỖI VÀ HÀM HỒI TIẾP",
+    "estimated_content_height": 442.3
+  },
+  {
+    "pdf_page": 8,
+    "title": "2.2. Nơ-ron, phép affine và tanh",
+    "estimated_content_height": 395.3
+  },
+  {
+    "pdf_page": 9,
+    "title": "2.3. Trạng thái ẩn và phép truy hồi",
+    "estimated_content_height": 424.1
+  },
+  {
+    "pdf_page": 10,
+    "title": "2.4. RNN như hợp thành hàm theo thời gian",
+    "estimated_content_height": 362.5
+  },
+  {
+    "pdf_page": 11,
+    "title": "2.5. Ví dụ số của chuỗi ba bước",
+    "estimated_content_height": 430.0
+  },
+  {
+    "pdf_page": 12,
+    "title": "2.6. Many-to-one và đầu dự đoán",
+    "estimated_content_height": 424.1
+  },
+  {
+    "pdf_page": 13,
+    "title": "2.7. Padding, masking và độ dài thật",
+    "estimated_content_height": 383.1
+  },
+  {
+    "pdf_page": 14,
+    "title": "2.8. Cross-entropy và trọng số lớp",
+    "estimated_content_height": 389.7
+  },
+  {
+    "pdf_page": 15,
+    "title": "2.9. Hồi quy log return và sai số",
+    "estimated_content_height": 424.1
+  },
+  {
+    "pdf_page": 16,
+    "title": "2.10. Lan truyền ngược qua thời gian",
+    "estimated_content_height": 407.1
+  },
+  {
+    "pdf_page": 17,
+    "title": "2.11. Tiêu biến, bùng nổ và clipping",
+    "estimated_content_height": 345.1
+  },
+  {
+    "pdf_page": 18,
+    "title": "2.12. Kiểm tra đạo hàm bằng sai phân hữu hạn",
+    "estimated_content_height": 418.5
+  },
+  {
+    "pdf_page": 19,
+    "title": "2.13. Số tham số và chi phí tính toán",
+    "estimated_content_height": 348.8
+  },
+  {
+    "pdf_page": 20,
+    "title": "CHƯƠNG 3. NGUỒN VÀ KIỂM TRA DỮ LIỆU",
+    "estimated_content_height": 318.4
+  },
+  {
+    "pdf_page": 21,
+    "title": "3.2. Retailrocket: các trường và ngữ nghĩa",
+    "estimated_content_height": 371.7
+  },
+  {
+    "pdf_page": 22,
+    "title": "3.3. Retailrocket: làm sạch và dựng phiên",
+    "estimated_content_height": 409.9
+  },
+  {
+    "pdf_page": 23,
+    "title": "3.4. Retailrocket: đặc trưng và mất cân bằng",
+    "estimated_content_height": 480.7
+  },
+  {
+    "pdf_page": 24,
+    "title": "3.5. Retailrocket: nhịp thời gian và chuyển hành vi",
+    "estimated_content_height": 537.8
+  },
+  {
+    "pdf_page": 25,
+    "title": "3.6. S&P 500: cấu trúc và kiểm tra giá",
+    "estimated_content_height": 466.2
+  },
+  {
+    "pdf_page": 26,
+    "title": "3.7. S&P 500: biến đổi nhân quả và cửa sổ",
+    "estimated_content_height": 423.1
+  },
+  {
+    "pdf_page": 27,
+    "title": "3.8. S&P 500: phân bố và độ phủ",
+    "estimated_content_height": 522.9
+  },
+  {
+    "pdf_page": 28,
+    "title": "3.9. Tập chia và thống kê chuẩn hóa",
+    "estimated_content_height": 410.1
+  },
+  {
+    "pdf_page": 29,
+    "title": "CHƯƠNG 4. KIẾN TRÚC VÀ HAI FRAMEWORK",
+    "estimated_content_height": 371.7
+  },
+  {
+    "pdf_page": 30,
+    "title": "4.2. RNN trong PyTorch",
+    "estimated_content_height": 316.5
+  },
+  {
+    "pdf_page": 31,
+    "title": "4.3. Một bước cập nhật PyTorch",
+    "estimated_content_height": 345.1
+  },
+  {
+    "pdf_page": 32,
+    "title": "4.4. SimpleRNN trong Keras",
+    "estimated_content_height": 316.5
+  },
+  {
+    "pdf_page": 33,
+    "title": "4.5. GradientTape và checkpoint Keras",
+    "estimated_content_height": 345.1
+  },
+  {
+    "pdf_page": 34,
+    "title": "4.6. Đối chiếu cài đặt và giới hạn tương đương",
+    "estimated_content_height": 381.8
+  },
+  {
+    "pdf_page": 35,
+    "title": "CHƯƠNG 5. THIẾT KẾ THỰC NGHIỆM",
+    "estimated_content_height": 416.9
+  },
+  {
+    "pdf_page": 36,
+    "title": "5.2. Validation, chọn checkpoint và test",
+    "estimated_content_height": 325.5
+  },
+  {
+    "pdf_page": 37,
+    "title": "5.3. Phương pháp đối chứng",
+    "estimated_content_height": 333.5
+  },
+  {
+    "pdf_page": 38,
+    "title": "5.4. Dừng, lưu và tiếp tục thực nghiệm",
+    "estimated_content_height": 366.5
+  },
+  {
+    "pdf_page": 39,
+    "title": "5.5. Hồ sơ kiểm chứng và giới hạn trước huấn luyện",
+    "estimated_content_height": 435.0
+  },
+  {
+    "pdf_page": 40,
+    "title": "GIỚI HẠN VÀ PHẠM VI DIỄN GIẢI",
+    "estimated_content_height": 303.3
+  },
+  {
+    "pdf_page": 41,
+    "title": "TÀI LIỆU THAM KHẢO (1/2)",
+    "estimated_content_height": 245.9
+  },
+  {
+    "pdf_page": 42,
+    "title": "TÀI LIỆU THAM KHẢO (2/2)",
+    "estimated_content_height": 272.0
+  },
+  {
+    "pdf_page": 43,
+    "title": "PHỤ LỤC. THUẬT NGỮ",
+    "estimated_content_height": 422.9
+  }
+]

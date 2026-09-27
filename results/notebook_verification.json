@@ -1,0 +1,62 @@
+[
+  {
+    "notebook": "00_RNN_Functions.ipynb",
+    "code_cells": 8,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "01_Data_retailrocket.ipynb",
+    "code_cells": 7,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "02_Data_sp500.ipynb",
+    "code_cells": 6,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "03_pytorch_retailrocket.ipynb",
+    "code_cells": 10,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "04_keras_retailrocket.ipynb",
+    "code_cells": 10,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "05_pytorch_sp500.ipynb",
+    "code_cells": 10,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "06_keras_sp500.ipynb",
+    "code_cells": 10,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "07_Training_and_Resume.ipynb",
+    "code_cells": 4,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "08_Comparison_and_Visualization.ipynb",
+    "code_cells": 4,
+    "max_cell_lines": 13,
+    "passed": true
+  },
+  {
+    "notebook": "09_Verification.ipynb",
+    "code_cells": 3,
+    "max_cell_lines": 13,
+    "passed": true
+  }
+]

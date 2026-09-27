@@ -1,0 +1,14 @@
+[
+  {
+    "framework": "pytorch",
+    "process_restart": true,
+    "max_output_error": 0.0,
+    "passed": true
+  },
+  {
+    "framework": "keras",
+    "process_restart": true,
+    "max_output_error": 0.0,
+    "passed": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "hidden_size": 32,
+  "batch_size": 256,
+  "max_epochs": 20,
+  "patience": 4,
+  "min_delta": 0.00001,
+  "learning_rate": 0.001,
+  "adam_epsilon": 1e-7,
+  "clip_norm": 1,
+  "sequence_lengths": {
+    "retailrocket": 20,
+    "sp500": 30
+  },
+  "frameworks": [
+    "pytorch",
+    "keras"
+  ],
+  "datasets": [
+    "retailrocket",
+    "sp500"
+  ]
+}

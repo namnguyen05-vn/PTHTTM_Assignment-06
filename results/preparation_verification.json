@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_manual_training",
+  "notebooks": 10,
+  "max_code_cell_lines": 13,
+  "smoke_runs": 4,
+  "full_training_runs": 0,
+  "pdf_pages": 43,
+  "pdf_sha256": "1f220d769de0d4d013555a6390e4f5fd0acbffe9683c49c009982df3fb4e6840",
+  "visual_review": "43 pages reviewed in contact sheets; cover, equations, plots and glossary checked at full size",
+  "clean_install_verified": false
+}

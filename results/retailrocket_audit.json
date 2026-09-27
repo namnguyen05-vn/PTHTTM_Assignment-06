@@ -1,0 +1,97 @@
+{
+  "dataset": "retailrocket",
+  "features": [
+    "view",
+    "addtocart",
+    "transaction",
+    "log_gap_seconds",
+    "same_item_as_previous",
+    "log_session_position",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos"
+  ],
+  "input_dim": 10,
+  "sequence_length": 20,
+  "cutoffs_utc": [
+    "2015-08-08T00:00:00+00:00",
+    "2015-08-29T00:00:00+00:00"
+  ],
+  "split_sizes": {
+    "train": 747842,
+    "val": 122917,
+    "test": 118192
+  },
+  "scaler_mean": [
+    0.9684806831403948,
+    0.024763839312126532,
+    0.006755477547478652,
+    1.5610780876545785,
+    0.10254008322322362,
+    0.5320501371533713,
+    -0.18216785729259052,
+    0.3024428291977769,
+    0.08615441665781866,
+    0.011987753303315899
+  ],
+  "scaler_scale": [
+    0.17471648326596886,
+    0.15540460602750308,
+    0.08191361956500105,
+    2.228577283338054,
+    0.3033572391624871,
+    0.8868430370093274,
+    0.7251336280867868,
+    0.591205910396801,
+    0.6880319217657125,
+    0.720448314685107
+  ],
+  "raw_sha256": "b605e916a9379585d4a0a3f3c76abe7e5be4ed178b73d969e89061a2340ae191",
+  "raw_rows": 2756101,
+  "exact_duplicates_removed": 460,
+  "ambiguous_timestamp_rows_removed": 4769,
+  "retained_events": 2750872,
+  "raw_visitors": 1407557,
+  "sessions": 1761509,
+  "singleton_sessions": 1379077,
+  "crossing_boundary_target_rows_removed": 412,
+  "event_counts": [
+    2663191,
+    68952,
+    18729
+  ],
+  "date_min": "2015-05-03 03:00:04+00:00",
+  "date_max": "2015-09-18 02:59:47+00:00",
+  "task": "Next event type, conditional on another event existing within the session.",
+  "session_gap_seconds": 1800,
+  "timestamp_unit_source": "milliseconds",
+  "split_policy": "Global dates; sessions crossing boundaries excluded; returning visitors allowed.",
+  "excluded_columns": [
+    "transactionid (outcome identifier)",
+    "item properties (not required)"
+  ],
+  "class_counts": {
+    "train": [
+      690004,
+      44786,
+      13052
+    ],
+    "val": [
+      112041,
+      8383,
+      2493
+    ],
+    "test": [
+      108211,
+      7683,
+      2298
+    ]
+  },
+  "labels": [
+    "view",
+    "addtocart",
+    "transaction"
+  ],
+  "target_scale": 1.0
+}

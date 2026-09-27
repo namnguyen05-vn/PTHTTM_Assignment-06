@@ -1,0 +1,18 @@
+[
+  {
+    "dataset": "retailrocket",
+    "url": "https://www.kaggle.com/api/v1/datasets/download/retailrocket/ecommerce-dataset/events.csv",
+    "file": "retailrocket.download",
+    "csv_member": "events.csv",
+    "bytes": 33971694,
+    "sha256": "b605e916a9379585d4a0a3f3c76abe7e5be4ed178b73d969e89061a2340ae191"
+  },
+  {
+    "dataset": "sp500",
+    "url": "https://www.kaggle.com/api/v1/datasets/download/camnugent/sandp500/all_stocks_5yr.csv",
+    "file": "sp500.download",
+    "csv_member": "all_stocks_5yr.csv",
+    "bytes": 10068232,
+    "sha256": "8976e01d96bcbc0d38b312402f8705f2af50ae93e93cca767f6943d4e3a72459"
+  }
+]

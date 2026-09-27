@@ -1,0 +1,233 @@
+{
+  "figures": [
+    [
+      1,
+      "Phân bố nhãn mục tiêu và độ dài lịch sử sau xử lý.",
+      22
+    ],
+    [
+      2,
+      "Số nhãn mục tiêu theo ngày; đây là các mẫu dự đoán hợp lệ, không phải mọi sự kiện raw.",
+      23
+    ],
+    [
+      3,
+      "Xác suất chuyển hành vi ước lượng chỉ từ train, chưa cộng làm trơn.",
+      23
+    ],
+    [
+      4,
+      "Phân bố log return và ba chuỗi giá chuẩn hóa được chọn trước để minh họa.",
+      26
+    ],
+    [
+      5,
+      "Số cửa sổ hợp lệ theo từng mã cổ phiếu.",
+      26
+    ]
+  ],
+  "tables": [
+    [
+      1,
+      "Các câu hỏi và cách khảo sát.",
+      4
+    ],
+    [
+      2,
+      "Đơn vị phân tích ở hai nhiệm vụ.",
+      5
+    ],
+    [
+      3,
+      "Các chiều tensor trong mô hình chuỗi.",
+      6
+    ],
+    [
+      4,
+      "Các tham số theo quy ước vector hàng.",
+      8
+    ],
+    [
+      5,
+      "Trạng thái tính trực tiếp từ ví dụ NumPy.",
+      10
+    ],
+    [
+      6,
+      "Hai đầu dự đoán dùng chung lõi hồi tiếp.",
+      11
+    ],
+    [
+      7,
+      "Các lỗi thường gặp khi xử lý chuỗi ngắn.",
+      12
+    ],
+    [
+      8,
+      "Các chỉ số hồi quy và giới hạn đọc kết quả.",
+      14
+    ],
+    [
+      9,
+      "Các tầng kiểm tra độc lập.",
+      17
+    ],
+    [
+      10,
+      "Số tham số của kiến trúc RNN sử dụng.",
+      18
+    ],
+    [
+      11,
+      "Các tệp được tải và kiểm tra trực tiếp.",
+      19
+    ],
+    [
+      12,
+      "Từ điển dữ liệu hành vi.",
+      20
+    ],
+    [
+      13,
+      "Audit làm sạch Retailrocket.",
+      21
+    ],
+    [
+      14,
+      "Mười đặc trưng của một bước hành vi.",
+      22
+    ],
+    [
+      15,
+      "Từ điển dữ liệu giá và khối lượng.",
+      24
+    ],
+    [
+      16,
+      "Audit dữ liệu S&P 500.",
+      24
+    ],
+    [
+      17,
+      "Bảy đặc trưng của một bước chứng khoán.",
+      25
+    ],
+    [
+      18,
+      "Số mẫu dự đoán sau tạo cửa sổ.",
+      27
+    ],
+    [
+      19,
+      "Kiến trúc chung cho hai cách triển khai.",
+      28
+    ],
+    [
+      20,
+      "Kiểm tra CPU trên ví dụ nhỏ với cùng trọng số.",
+      33
+    ],
+    [
+      21,
+      "Điều kiện so sánh và các nguồn khác biệt còn lại.",
+      33
+    ],
+    [
+      22,
+      "Các điều kiện chính của thực nghiệm.",
+      34
+    ],
+    [
+      23,
+      "Quy tắc chọn mô hình trước khi đánh giá test.",
+      35
+    ],
+    [
+      24,
+      "Các mốc so sánh đơn giản.",
+      36
+    ],
+    [
+      25,
+      "So sánh smoke hai epoch liền với dừng sau epoch thứ nhất.",
+      37
+    ],
+    [
+      26,
+      "Các kiểm tra chương trình đã thực hiện.",
+      38
+    ],
+    [
+      27,
+      "Thuật ngữ theo ngữ cảnh báo cáo.",
+      42
+    ]
+  ],
+  "code_listings": [
+    [
+      1,
+      "Giá trị và đạo hàm của tanh.",
+      7
+    ],
+    [
+      2,
+      "Vòng lặp thể hiện phép hợp thành theo thời gian.",
+      9
+    ],
+    [
+      3,
+      "Ví dụ hai chiều để quan sát trạng thái từng bước.",
+      10
+    ],
+    [
+      4,
+      "Mặt nạ phần đệm theo độ dài thật.",
+      12
+    ],
+    [
+      5,
+      "Trọng số chỉ dựa trên phân bố lớp train.",
+      13
+    ],
+    [
+      6,
+      "BPTT cho loss bình phương tại trạng thái cuối của ví dụ NumPy.",
+      15
+    ],
+    [
+      7,
+      "Giới hạn chuẩn toàn cục trước cập nhật Adam.",
+      16
+    ],
+    [
+      8,
+      "Đối chiếu gradient giải tích và gradient số.",
+      17
+    ],
+    [
+      9,
+      "Đồ thị PyTorch và đóng gói chuỗi có độ dài khác nhau.",
+      29
+    ],
+    [
+      10,
+      "Bước học phân loại; đầu hồi quy thay loss bằng MSE.",
+      30
+    ],
+    [
+      11,
+      "Keras Functional API với lengths làm đầu vào tường minh.",
+      31
+    ],
+    [
+      12,
+      "Bước học Keras theo cùng mẫu số và trọng số lớp.",
+      32
+    ],
+    [
+      13,
+      "Thứ tự công bố epoch đã hoàn tất.",
+      37
+    ]
+  ]
+}
